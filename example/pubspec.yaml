@@ -1,0 +1,22 @@
+name: example
+description: NORAD SGP4/SDP4 basic Example
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  sgp4_sdp4:
+    path: ../
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+

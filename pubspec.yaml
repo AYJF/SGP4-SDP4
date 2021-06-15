@@ -1,7 +1,7 @@
 name: sgp4_sdp4
-description: A new Flutter package project.
+description: NORAD SGP4/SDP4 Implementations in Dart
 version: 0.0.1
-homepage:
+homepage: https://github.com/AYJF/SGP4-SDP4.git
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
