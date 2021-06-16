@@ -136,7 +136,7 @@ class Eci {
   void ae2Km() {
     if (unitsAreAe()) {
       mulPos(XKMPER_WGS72 / AE); // km
-      mulPos((XKMPER_WGS72 / AE) * (MIN_PER_DAY / 86400)); // km/sec
+      mulVel((XKMPER_WGS72 / AE) * (MIN_PER_DAY / 86400)); // km/sec
       vecUnits = VecUnits.UNITS_KM;
     }
   }

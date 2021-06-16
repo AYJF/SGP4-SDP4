@@ -1,3 +1,4 @@
+/// Geo Coordinates
 /// Latitude,  radians (negative south)
 /// Longitude, radians (negative west)
 /// Altitude,  km      (above mean sea level)

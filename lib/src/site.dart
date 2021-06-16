@@ -100,19 +100,19 @@ class Site {
         range: vecRange.w, // range, km
         rangeRate: rate); // rate,  km / sec
 
-    // Elevation correction for atmospheric refraction.
-    // Reference:  Astronomical Algorithms by Jean Meeus, pp. 101-104
-    // Note:  Correction is meaningless when apparent elevation is below horizon
-    topo.el += deg2rad(
-        (1.02 / tan(deg2rad(rad2deg(el) + 10.3 / (rad2deg(el) + 5.11)))) /
-            60.0);
-    if (topo.el < 0.0) {
-      topo.el = el; // Reset to true elevation
-    }
+    // // Elevation correction for atmospheric refraction.
+    // // Reference:  Astronomical Algorithms by Jean Meeus, pp. 101-104
+    // // Note:  Correction is meaningless when apparent elevation is below horizon
+    // topo.el += deg2rad(
+    //     (1.02 / tan(deg2rad(rad2deg(el) + 10.3 / (rad2deg(el) + 5.11)))) /
+    //         60.0);
+    // if (topo.el < 0.0) {
+    //   topo.el = el; // Reset to true elevation
+    // }
 
-    if (topo.el > (PI / 2)) {
-      topo.el = (PI / 2);
-    }
+    // if (topo.el > (PI / 2)) {
+    //   topo.el = (PI / 2);
+    // }
 
     return topo;
   }

@@ -156,7 +156,6 @@ class Orbit {
   /// tsince  - Time in minutes since the TLE epoch (GMT).
   Eci getPosition(double tsince) {
     Eci? eci = m_pNoradModel.getPosition(tsince);
-
     eci!.ae2Km();
 
     return eci;

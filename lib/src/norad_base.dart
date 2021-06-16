@@ -288,7 +288,7 @@ abstract class NoradBase {
     Julian gmt = m_Orbit.epoch();
     gmt.addMin(tsince);
 
-    Eci eci = Eci(vecPos, vecVel, gmt);
+    Eci eci = new Eci(vecPos, vecVel, gmt);
 
     return eci;
   }

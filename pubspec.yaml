@@ -1,6 +1,6 @@
 name: sgp4_sdp4
 description: NORAD sgp4_sdp4 is an implementations of simplified perturbations models (SGP4, SDP4) in Dart.
-version: 0.0.3
+version: 0.1.0
 homepage: https://github.com/AYJF/SGP4-SDP4.git
 
 environment:
