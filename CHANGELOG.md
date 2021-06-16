@@ -9,3 +9,7 @@
 - Update doc
 - Update example
 - Fix minor bug
+
+## 0.0.3
+
+- Minor change
