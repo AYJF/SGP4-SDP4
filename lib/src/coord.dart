@@ -1,3 +1,6 @@
+/// Latitude,  radians (negative south)
+/// Longitude, radians (negative west)
+/// Altitude,  km      (above mean sea level)
 class CoordGeo {
   CoordGeo({
     this.lat: 0.0,
@@ -5,11 +8,16 @@ class CoordGeo {
     this.alt: 0.0,
   });
 
-  double lat; // Latitude,  radians (negative south)
-  double lon; // Longitude, radians (negative west)
-  double alt; // Altitude,  km      (above mean sea level)
+  double lat;
+  double lon;
+  double alt;
 }
 
+/// Azimuth, radians
+/// Elevation, radians
+/// Range, kilometers
+/// Range rate of change, km/sec
+/// Negative value means "towards observer"
 class CoordTopo {
   CoordTopo({
     this.az: 0.0,
@@ -18,9 +26,8 @@ class CoordTopo {
     this.rangeRate: 0.0,
   });
 
-  double az; // Azimuth, radians
-  double el; // Elevation, radians
-  double range; // Range, kilometers
-  double rangeRate; // Range rate of change, km/sec
-  // Negative value means "towards observer"
+  double az;
+  double el;
+  double range;
+  double rangeRate;
 }

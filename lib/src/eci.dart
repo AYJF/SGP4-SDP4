@@ -11,6 +11,7 @@ enum VecUnits {
   UNITS_KM,
 }
 
+///ECI coordinates
 class Eci {
   late Vector pos;
   late Vector vel;
@@ -31,6 +32,10 @@ class Eci {
   /// Reference: www.celestrak.com (Dr. TS Kelso)
   Eci.fromGeo(CoordGeo geo, Julian date) {
     vecUnits = VecUnits.UNITS_KM;
+
+    ///default initialization
+    pos = Vector();
+    vel = Vector();
 
     double mfactor = TWOPI * (OMEGA_E / SEC_PER_DAY);
     double lat = geo.lat;
@@ -58,14 +63,17 @@ class Eci {
         sqr(vel.y));
   }
 
+  ///return the pos
   Vector getPos() {
     return this.pos;
   }
 
+  /// return the velocity
   Vector getVel() {
     return this.vel;
   }
 
+  ///get the date as Julian Date
   Julian getDate() {
     return this.date;
   }
@@ -87,12 +95,12 @@ class Eci {
   }
 
   /// toGeo()
-// Return the corresponding geodetic position (based on the current ECI
-// coordinates/Julian date).
-// Assumes the earth is an oblate spheroid as defined in WGS '72.
-// Side effects: Converts the position and velocity vectors to km-based units.
-// Reference: The 1992 Astronomical Almanac, page K12.
-// Reference: www.celestrak.com (Dr. TS Kelso)
+  /// Return the corresponding geodetic position (based on the current ECI
+  /// coordinates/Julian date).
+  /// Assumes the earth is an oblate spheroid as defined in WGS '72.
+  /// Side effects: Converts the position and velocity vectors to km-based units.
+  /// Reference: The 1992 Astronomical Almanac, page K12.
+  /// Reference: www.celestrak.com (Dr. TS Kelso)
   CoordGeo toGeo() {
     ae2Km(); // Vectors must be in kilometer-based units
 

@@ -1,6 +1,9 @@
 name: sgp4_sdp4
-description: NORAD SGP4/SDP4 Implementations in Dart
-version: 0.0.1
+description:  Simplified perturbations models are a set of five mathematical 
+              models (SGP, SGP4, SDP4, SGP8 and SDP8) used to calculate orbital state vectors of satellites and space debris 
+              relative to the Earth-centered inertial coordinate system. NORAD sgp4_sdp4 is a package implementations  of SGP4, SDP4 models
+              in pure Dart.
+version: 0.0.2
 homepage: https://github.com/AYJF/SGP4-SDP4.git
 
 environment:

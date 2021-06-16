@@ -4,7 +4,9 @@ NORAD SGP4/SDP4 Implementations
 
 ## Getting Started
 
-The SGP4/SDP4 package are implementations of NORAD algorithms for determining satellite location and velocity in Earth orbit.  The algorithms come from the December, 1980 NORAD document ["Space Track Report No. 3"](http://www.celestrak.com/publications/AIAA/2006-6753/).  The orbital algorithms implemented in SGP4/SDP4 package are: SGP4, for "near-Earth" objects, and SDP4 for "deep space" objects.  These algorithms are widely used in the satellite tracking community and produce very accurate results when provided with current NORAD two-line element data.
+After looking for some time for some suitable package for the right job with satellite tracking in dart language, I wasn't to be able to find any. That's how sgp4_sdp4 was born!
+
+The SGP4/SDP4 package are implementations of NORAD algorithms for determining satellite location and velocity in Earth orbit.  The algorithms come from the December, 1980 NORAD document ["Space Track Report No. 3"](https://www.celestrak.com/publications/AIAA/2006-6753/).  The orbital algorithms implemented in SGP4/SDP4 package are: SGP4, for "near-Earth" objects, and SDP4 for "deep space" objects.  These algorithms are widely used in the satellite tracking community and produce very accurate results when provided with current NORAD two-line element data.
 
 The package contains complete source code for the SGP4/SDP4 algorithms, miscellaneous supporting classes, and an example program that demonstrates how to calculate the ECI position of a satellite, as well as its geo coordinates(lat,lng)
 
@@ -64,6 +66,7 @@ For excellent information on the underlying physics of orbits, visible satellite
 I work on this project in my free time because I have my personal life and job.
 
 - Provide more examples 
+- look angle from an Earth ground site (Azimuth and elevation)
 - Solar position
 
 

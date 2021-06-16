@@ -35,10 +35,9 @@ abstract class NoradBase {
   late double m_xnodcf;
   late double m_t2cof;
 
+  /// Initialize any variables which are time-independent when
+  /// calculating the ECI coordinates of the satellite.
   init(Orbit orbit) {
-    // Initialize any variables which are time-independent when
-    // calculating the ECI coordinates of the satellite.
-
     m_Orbit = orbit;
 
     m_sinio = sin(m_Orbit.inclination());

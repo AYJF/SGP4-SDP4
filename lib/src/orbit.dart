@@ -77,46 +77,57 @@ class Orbit {
     return m_aeAxisSemiMinorRec;
   }
 
+  /// mean motion, rads/min
   double meanMotion() {
     return m_rmMeanMotionRec;
-  } // mean motion, rads/min
+  }
 
+  /// major axis in AE
   double major() {
     return 2.0 * semiMajor();
-  } // major axis in AE
+  }
 
+  /// minor axis in AE
   double minor() {
     return 2.0 * semiMinor();
-  } // minor axis in AE
+  }
 
+  /// perigee in km
   double perigee() {
     return m_kmPerigeeRec;
-  } // perigee in km
+  }
 
+  /// apogee in km
   double apogee() {
     return m_kmApogeeRec;
-  } // apogee in km
+  }
 
+  /// return the field in radians
   double radGet(eField fld) {
     return m_tle.getField(fld, units: eUnits.U_RAD);
   }
 
+  /// return the field in degree
   double degGet(eField fld) {
     return m_tle.getField(fld, units: eUnits.U_DEG);
   }
 
+  /// return the inclination in radians
   double inclination() {
     return radGet(eField.FLD_I);
   }
 
+  /// return the eccentricity
   double eccentricity() {
     return m_tle.getField(eField.FLD_E);
   }
 
+  /// return the RAAN  in radians
   double raan() {
     return radGet(eField.FLD_RAAN);
   }
 
+  /// return the Argument of Perigee in radians
   double argPerigee() {
     return radGet(eField.FLD_ARGPER);
   }
@@ -133,6 +144,7 @@ class Orbit {
     return m_tle.getField(eField.FLD_MMOTION);
   }
 
+  /// return the Mean Anonmoly in radians
   double meanAnomaly() {
     return radGet(eField.FLD_M);
   }
@@ -174,6 +186,7 @@ class Orbit {
     return m_secPeriod;
   }
 
+  /// return the Julian object
   Julian epoch() {
     return m_jdEpoch;
   }

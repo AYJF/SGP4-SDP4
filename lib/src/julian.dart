@@ -1,16 +1,21 @@
 import 'globals.dart';
 
-const double EPOCH_JAN1_00H_1900 =
-    2415019.5; // Jan 1.0 1900 = Jan 1 1900 00h UTC
-const double EPOCH_JAN1_12H_1900 =
-    2415020.0; // Jan 1.5 1900 = Jan 1 1900 12h UTC
-const double EPOCH_JAN1_12H_2000 =
-    2451545.0; // Jan 1.5 2000 = Jan 1 2000 12h UTC
+/// Jan 1.0 1900 = Jan 1 1900 00h UTC
+const double EPOCH_JAN1_00H_1900 = 2415019.5;
 
+/// Jan 1.5 1900 = Jan 1 1900 12h UTC
+const double EPOCH_JAN1_12H_1900 = 2415020.0;
+
+/// Jan 1.5 2000 = Jan 1 2000 12h UTC
+const double EPOCH_JAN1_12H_2000 = 2451545.0;
+
+/// Year : Includes the century.
+/// Month: 1..12
+/// Day  : 1..31 including fractional part
 class CDate {
-  final int year; // Year : Includes the century.
-  final int? month; // Month: 1..12
-  final double? day; // Day  : 1..31 including fractional part
+  final int year;
+  final int? month;
+  final double? day;
 
   CDate({
     required this.year,
@@ -19,8 +24,9 @@ class CDate {
   });
 }
 
+// Julian date class
 class Julian {
-  late double _date; // Julian date
+  late double _date;
 
   /// Create a Julian date object from a year and day of year.
   /// Example parameters: year = 2001, day = 1.5 (Jan 1 12h)
@@ -28,6 +34,7 @@ class Julian {
     initialize(year, day);
   }
 
+  /// Create a Julian date object from a year , mon , day, hour and  min.
   Julian.fromFullDate(
       int year, // i.e., 2004
       int mon, // 1..12
@@ -52,9 +59,10 @@ class Julian {
     initialize(year, dblDay);
   }
 
+  /// Initialize the Julian object
+  /// 1582 A.D.: 10 days removed from calendar
+  /// 3000 A.D.: Arbitrary error checking limit
   void initialize(int year, double day) {
-    // 1582 A.D.: 10 days removed from calendar
-    // 3000 A.D.: Arbitrary error checking limit
     assert((year > 1582) && (year < 3000));
     assert((day >= 1.0) && (day < 367.0));
 
@@ -94,18 +102,22 @@ class Julian {
     return (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0);
   }
 
+  /// add [day] to the date
   void addDay(double day) {
     _date += day;
   }
 
+  /// add [hr] to the date
   void addHour(double hr) {
     _date += (hr / HR_PER_DAY);
   }
 
+  /// add [min] to the date
   void addMin(double min) {
     _date += (min / MIN_PER_DAY);
   }
 
+  /// add [sec] to the date
   void addSec(double sec) {
     _date += (sec / SEC_PER_DAY);
   }
@@ -126,6 +138,7 @@ class Julian {
     return spanDay(b) * SEC_PER_DAY;
   }
 
+  /// return the date as Julian date
   double getDate() {
     return _date;
   }
